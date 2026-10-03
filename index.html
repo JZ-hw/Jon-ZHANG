@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #667eea;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            animation: fadeInUp 0.8s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            background: #f0f0ff;
+        }
+
+        /* 卡片区域 */
+        .features {
+            display: flex;
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        .card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .card p {
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .navbar {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <a href="#" class="logo">🚀 MySite</a>
+        <ul class="nav-links">
+            <li><a href="#">首页</a></li>
+            <li><a href="#features">特色</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero 主视觉 -->
+    <section class="hero">
+        <h1>👋 你好，欢迎来访！</h1>
+        <p>这是我用 GitHub Pages 搭建的个人网页，快速、免费、优雅。</p>
+        <a href="#features" class="btn">了解更多</a>
+    </section>
+
+    <!-- 特色卡片 -->
+    <section class="features" id="features">
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>极速加载</h3>
+            <p>纯静态页面，无需服务器，加载速度飞快，用户体验一流。</p>
+        </div>
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>现代设计</h3>
+            <p>简洁优雅的 UI 设计，渐变色 + 毛玻璃效果，颜值在线。</p>
+        </div>
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>响应式布局</h3>
+            <p>完美适配手机、平板和桌面端，随时随地访问。</p>
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" style="text-align:center; padding: 4rem 2rem; color: white;">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">关于本站</h2>
+        <p style="max-width: 600px; margin: 0 auto; opacity: 0.9; line-height: 1.8;">
+            这是一个使用纯 HTML + CSS 构建的示例页面，托管在 GitHub Pages 上。<br>
+            完全免费，无需域名即可拥有自己的网站。
+        </p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <p>© 2026 MySite | 由 <a href="https://github.com" target="_blank">GitHub Pages</a> 驱动</p>
+        <p style="margin-top: 0.5rem;">📧 hello@example.com</p>
+    </footer>
+
+</body>
+</html>
