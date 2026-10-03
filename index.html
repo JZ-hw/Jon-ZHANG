@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>張漢瑋的個人主頁</title>
+    <title>Jon-ZHANG 的个人主页</title>
     <style>
         /* 全局样式 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,13 +16,16 @@
             position: sticky; top: 0; z-index: 100;
         }
         .logo { font-size: 1.5rem; font-weight: bold; color: #e91e63; text-decoration: none; }
+        .nav-links { list-style: none; display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: #555; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #e91e63; }
         
-        /* 主视觉区域 - 全屏大图背景 */
+        /* 主视觉区域 - 使用你的荷花图作为背景 */
         .hero {
-            height: 85vh; /* 占据屏幕85%高度 */
-            /* 👇 关键：请把下面的 '25871.png' 改成你真实的数字文件名 */
+            height: 70vh; 
+            /* 👇 这里已经改成了你的文件名 25871.png */
             background-image: url('25871.png'); 
-            background-size: cover;
+            background-size: cover; 
             background-position: center;
             display: flex; align-items: center; justify-content: center; text-align: center;
             position: relative;
@@ -42,24 +45,34 @@
         }
         .btn:hover { background: #c2185b; transform: translateY(-2px); }
 
-        /* 作品展示区 */
-        .gallery-section { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
-        .gallery-section h2 { margin-bottom: 2rem; color: #333; font-size: 2rem; }
-        
-        .photo-card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 3rem;
+        /* 栏目区域通用样式 */
+        .section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .section-title { 
+            font-size: 2rem; color: #333; margin-bottom: 2rem; 
+            padding-bottom: 10px; border-bottom: 3px solid #e91e63; display: inline-block;
         }
-        .photo-card img { width: 100%; height: auto; display: block; }
-        .photo-desc { padding: 2rem; }
-        .photo-desc h3 { margin-bottom: 0.5rem; color: #e91e63; font-size: 1.5rem; }
-        .photo-desc p { color: #666; line-height: 1.8; }
+        
+        /* 图片网格布局 */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 1.5rem; 
+        }
+        .grid-item {
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: 0.3s;
+        }
+        .grid-item:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .grid-item img { width: 100%; height: 220px; object-fit: cover; display: block; background-color: #eee; }
+        .grid-item .desc { padding: 1rem; }
+        .grid-item h3 { margin-bottom: 0.3rem; color: #e91e63; font-size: 1.1rem; }
+        .grid-item p { color: #777; font-size: 0.9rem; line-height: 1.5; }
 
-        footer { text-align: center; padding: 2rem; background: #333; color: #aaa; margin-top: auto; }
+        footer { text-align: center; padding: 2rem; background: #333; color: #aaa; margin-top: 3rem; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
+            .navbar { flex-direction: column; gap: 10px; padding: 1rem; }
         }
     </style>
 </head>
@@ -67,39 +80,70 @@
 
     <!-- 导航栏 -->
     <nav class="navbar">
-        <a href="#" class="logo">📷 MyGallery</a>
+        <a href="#" class="logo">Jon-ZHANG</a>
+        <ul class="nav-links">
+            <li><a href="#wanwu">玩物尚志</a></li>
+            <li><a href="#hupeng">互捧够友</a></li>
+        </ul>
     </nav>
 
-    <!-- 主视觉：你的荷花大图 -->
+    <!-- 主视觉区域 -->
     <header class="hero">
         <div class="hero-content">
-            <h1>張漢瑋記錄光影瞬間</h1>
-            <p>documenting the quiet joys of everyday life</p>
-            <a href="#gallery" class="btn">查看作品</a>
+            <h1>光影瞬间</h1>
+            <p>记录生活中的美好与宁静</p>
+            <a href="#wanwu" class="btn">探索我的主页</a>
         </div>
     </header>
 
-    <!-- 作品展示区 -->
-    <section id="gallery" class="gallery-section">
-        <h2>精选摄影</h2>
-        
-        <!-- 荷花照片卡片 -->
-        <div class="photo-card">
-            <!-- 👇 关键：这里也要改成你真实的数字文件名 -->
-            <img src="123456.jpg" alt="夏日荷花">
-            <div class="photo-desc">
-                <h3>夏日荷花</h3>
-                <p>拍摄于盛夏午后，捕捉到了荷花盛开时的静谧之美。粉嫩的花瓣在深色背景下显得格外耀眼。</p>
+    <!-- 子集 1：玩物尚志 -->
+    <section id="wanwu" class="section">
+        <h2 class="section-title">🎮 玩物尚志</h2>
+        <div class="grid">
+            <!-- 这里的图片也换成了你的荷花图作为示例 -->
+            <div class="grid-item">
+                <img src="25871.png" alt="玩物尚志示例">
+                <div class="desc">
+                    <h3>我的热爱</h3>
+                    <p>在这里记录那些让我沉迷的爱好与物件。</p>
+                </div>
+            </div>
+            <!-- 占位卡片 -->
+            <div class="grid-item">
+                <img src="25871.png" alt="玩物尚志示例">
+                <div class="desc">
+                    <h3>更多收藏</h3>
+                    <p>持续更新中...</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div style="margin-top: 3rem; color: #999;">
-            <p>更多作品持续更新中...</p>
+    <!-- 子集 2：互捧够友 -->
+    <section id="hupeng" class="section">
+        <h2 class="section-title">🍻 互捧够友</h2>
+        <div class="grid">
+            <!-- 这里的图片也换成了你的荷花图作为示例 -->
+            <div class="grid-item">
+                <img src="25871.png" alt="互捧够友示例">
+                <div class="desc">
+                    <h3>友谊万岁</h3>
+                    <p>和朋友们在一起的欢乐时光。</p>
+                </div>
+            </div>
+            <!-- 占位卡片 -->
+            <div class="grid-item">
+                <img src="25871.png" alt="互捧够友示例">
+                <div class="desc">
+                    <h3>聚会记录</h3>
+                    <p>更多美好回忆...</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 JZ-hw | 个人摄影主页</p>
+        <p>© 2026 Jon-ZHANG | 个人主页</p>
     </footer>
 
 </body>
